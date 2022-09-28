@@ -1506,6 +1506,13 @@ static __isl_give isl_pw_qpolynomial *basic_set_card(
 	P = isl_basic_set_to_polylib(bset);
 	E = enumerate(P, U, options);
 
+  if (options->gist) {
+    isl_set *domain_bset =
+        isl_set_from_basic_set(isl_basic_set_params(isl_basic_set_copy(bset)));
+    pwqp = isl_pw_qpolynomial_gist_params(pwqp, isl_set_copy(domain_bset));
+    pwqp = isl_pw_qpolynomial_intersect_params(pwqp, domain_bset);
+  }
+
 	pwqp = isl_pw_qpolynomial_from_evalue(space, E);
 	isl_basic_set_free(bset);
 

@@ -108,6 +108,8 @@ struct barvinok_options {
     int		print_stats;
 
     int		gbr_only_first;
+
+    int gist;
 };
 
 ISL_ARG_DECL(barvinok_options, struct barvinok_options, barvinok_options_args)
