@@ -1,6 +1,6 @@
 [submodule "polylib"]
 	path = polylib
-	url = http://repo.or.cz/polylib
+	url = http://github.com/opencompl/lazystack-polylib.git
 [submodule "isl"]
 	path = isl
 	url = http://repo.or.cz/isl
